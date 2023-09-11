@@ -69,15 +69,17 @@ createApp({
 
             </pre>
 
-            <h2>text interpolation</h2>
+            <h2>string interpolation</h2>
             {{ message }}
 
             <br>
 
-            <h2>v-model:</h2>
+            <h2>v-model</h2>
             <input type="text" v-model="inputTextValue">
 
-            </p><p><span>Input content: </span>{{inputTextValue}}</p>
+            </p>Input content: {{inputTextValue}}</p>
+
+            <h2>v-bind</h2>
 
             <h1 v-bind:class="myClasseRed">myClasseRed: "{{myClasseRed}}"</h1>
 
@@ -85,7 +87,7 @@ createApp({
 
             <button v-on:click="alertWelcome">CLICK TO DISPLAY ALERT</button>
 
-            <h2>v-model (h1) + v-on@click (button)</h2>
+            <h2>v-bind (h1) + v-on:click (button)</h2>
 
             <h1 :class="titleColor">titleColor: "{{titleColor}}"</h1>
 
