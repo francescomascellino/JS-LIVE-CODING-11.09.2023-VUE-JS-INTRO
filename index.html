@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VUE JS INTRO</title>
+
+        <style>
+
+            .text-red {
+                color: red;
+            }
+
+            .text-blue {
+                color: blue;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="app">
+
+            <pre>
+
+<code>
+const { createApp } = Vue
+
+createApp({
+    
+    data() {
+
+        return {
+            message: 'Hello Vue!',
+            inputTextValue: "",
+            myClasseRed: "text-red",
+            titleColor: "text-red"
+        }
+
+    },
+
+    methods: {
+
+        alertWelcome() {
+            alert("Welcome!");
+        },
+
+        changeColor() {
+            console.log(this);
+
+            if (this.titleColor === "text-red") {
+
+                this.titleColor = "text-blue";
+                console.log(this.titleColor);
+
+            } else {
+
+                this.titleColor = "text-red";
+                console.log(this.titleColor);
+            }
+        }
+
+    }
+
+}).mount('#app')
+</code>
+
+            </pre>
+
+            <h2>text interpolation</h2>
+            {{ message }}
+
+            <br>
+
+            <h2>v-model:</h2>
+            <input type="text" v-model="inputTextValue">
+
+            </p><p><span>Input content: </span>{{inputTextValue}}</p>
+
+            <h1 v-bind:class="myClasseRed">myClasseRed: "{{myClasseRed}}"</h1>
+
+            <h2>v-on:click</h2>
+
+            <button v-on:click="alertWelcome">CLICK TO DISPLAY ALERT</button>
+
+            <h2>v-model (h1) + v-on@click (button)</h2>
+
+            <h1 :class="titleColor">titleColor: "{{titleColor}}"</h1>
+
+            <button @click="changeColor">CLICK TO CHANGE THE H1 COLOR</button>
+
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+        <script src="./assets/js/app.js"></script>
+
+    </body>
+</html>
